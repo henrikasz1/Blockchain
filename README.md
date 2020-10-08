@@ -18,6 +18,7 @@
 * Converts binary to hexadecimal code
 
 **Proof of avalanche effect:** : :volcano:
+
 (It seems that the output does not have fixed length, but trust me, all of them consist of 64 symbols, you can count if you want :) )
 
 |   Input    |                         Output                                     |
@@ -26,3 +27,12 @@
 |  Lietuva   |  c0df49d2ed8f9aa222acf8dba5c97d8181be93a5db1f354446fd2fca2f6eb3df  |
 |  Lietuva!  |  d523cbd8a626c29634a1b2328de9e2556a4797b14c4d852c33bede1b07b67d15  |
 
+
+**Analysis**
+
+Files with one symbol inside:
+
+|  File name  |   Time consumed   |                       Output                                     |
+|-------------|-------------------|------------------------------------------------------------------|
+|oneSymb1.txt |      1.013ms      | 0b4af3b3ed33142dda14665be6e7a9681695e767da66285b158ab714dab644d0 |
+|oneSymb1.txt |      1.002m       | d08ca5ec908ca5ec1bd298849bd298855ee6b426dee6b427de29f755de29f754 |
