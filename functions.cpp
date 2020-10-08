@@ -34,30 +34,26 @@ std::string mixing_bin (std::vector<int> &bin)//mixing values so that the output
     else
     {
       bin[i + 2] = bin[i] ^= bin[i + 2]; //using XOR logic operator
-      bin[i] >> 3;
     }
   }
-  for (size_t i = 0; i != bin.size() - 15; ++i)
-  {
-    bin[i] = bin[i + 10] ^= bin[i + 15];
-    bin[i + 1] = bin[bin.size() - 1] ^= bin[i];
-  }
+  for(int i = 0; i < bin.size() / 2; i++) {
+        bin[i] = bin[i] ^= bin[bin.size() / 2 + i];
+        bin[bin.size() - i - 1] = bin[i] ^= bin[bin.size() - i - 1];
+        bin[bin.size() / 2  - i] = bin[i] ^= bin[bin.size() / 2 + 1];
+    }
 
-  //need to work more with logic operator to make avalanche effect
   int x = 0;
-  while(bin.size() != 80)
+  while(bin.size() != 256)//altering vector size to 256
   {
-    bin[x] = bin[x] ^= bin[bin.size()-x];
-    if (x >= 160)
+    if (x >= 256)
     {
       x = 0;
     }
     x++;
     bin.pop_back();
   }
-  //need to mix values more (avalanche effect)
-  std::stringstream ss;
 
+  std::stringstream ss;
   std::copy(bin.begin(), bin.end(), std::ostream_iterator<int>(ss, ""));//https://stackoverflow.com/questions/2518979/how-to-transform-a-vectorint-into-a-string/2519011
 
   return ss.str();
@@ -65,20 +61,34 @@ std::string mixing_bin (std::vector<int> &bin)//mixing values so that the output
 //-----
 void padding (std::vector<int> &bin)
 {
-  if (bin.size() % 80 != 0)
+  if (bin.size() < 256)
   {
-    unsigned int a = (bin.size() / 80) + 1;
-    std::vector<int> pad;//((a * 80) - bin.size(), 1);
-    for (size_t i = 0; i !=(a * 80) - bin.size(); ++i)
+    std::string size = std::bitset<8>(bin.size()).to_string();
+    std::vector<int> binsz;
+    for (size_t i = 0; i != size.length(); ++i)
     {
-      if (bin.size() % 2 == 0 && i % 3 == 0)
+      binsz.push_back(int(size[i]) - 48);
+    }
+    unsigned int a = 0;
+    std::vector<int> pad;
+    for (size_t i = 0; i != 256 - bin.size(); i += 8)
+    {
+      if (a < bin.size())
+      {
+        for (size_t j = 0; j != binsz.size(); ++j)
         {
-          pad.push_back(0);
+          pad.push_back(binsz[j] ^= bin[a]);
+          a++;
         }
+      }
       else
+      {
+        for (size_t j = 0; j != binsz.size(); ++j)
         {
-          pad.push_back(1);
+          pad.push_back(binsz[j]);
         }
+        a = 0;
+      }
     }
     bin.insert(bin.end(), pad.begin(), pad.end());
   }
