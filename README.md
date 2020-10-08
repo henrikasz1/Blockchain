@@ -9,3 +9,10 @@ The hash function complies all the requirements that were specified in the given
 * Hash function is fast  :heavy_check_mark:
 * It is impossible to recover text from a hash code  :heavy_check_mark:
 * Hash function is collision resistant  :heavy_check_mark:
+
+This is how hash function works: :snail:
+
+* Converting text into binary code
+* Padding the binary code, so that it will be divisible by 256
+* Using logic gates to mix all the binary code (makes hash code irrecoverable)
+* Converting binary to hexadecimal code
