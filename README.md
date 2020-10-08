@@ -36,3 +36,18 @@ Files with one symbol inside:
 |-------------|-------------------|------------------------------------------------------------------|
 |oneSymb1.txt |      1.013ms      | 0b4af3b3ed33142dda14665be6e7a9681695e767da66285b158ab714dab644d0 |
 |oneSymb1.txt |      1.002m       | d08ca5ec908ca5ec1bd298849bd298855ee6b426dee6b427de29f755de29f754 |
+
+
+Large files (1001 symbols):
+
+|  File name  |   Time consumed   |                       Output                                     |
+|-------------|-------------------|------------------------------------------------------------------|
+|  long1.txt  |      1.999ms      | 06ee6dd453927e8d8fb48b3946a9d2735206567c4fda27aa58e82ad190435b8a |
+|  long2.txt  |      2.008ms      | cadcf12a2e866f6673f4e4a1a04f9c1baa8f2b78cf2ad46f2df591402840db9e |
+
+Large files (1001 symbols and only symbol is different):
+
+|      File name         |   Time consumed   |                       Output                                     |
+|------------------------|-------------------|------------------------------------------------------------------|
+|  longOneSymbDiff1.txt  |      2ms          | 582ef6beb9a38e4c647c0641981b61e3b9207fbea309c604b82f0c54579eba7e |
+|  longOneSymbDiff2.txt  |      1.997ms      | cc7fb3aae8e69a1d216857048c4a24f7e8656befe61d9741ac7e494006dbae2f |
