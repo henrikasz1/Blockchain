@@ -57,3 +57,12 @@ Konstitucija.txt file analysis:
 |      File name         |   Time consumed   |                       Output                                     |
 |------------------------|-------------------|------------------------------------------------------------------|
 |  Konstitucija.txt      |    110.936m       | 5ac9ee5b181ec70630269c9e7e1c1df865660c8ce72d557c941e4950abb9508a |
+
+Check for collisions (test1):
+
+|    length of line      |   Collisions found  |
+|------------------------|---------------------|
+|    10                  |         0           |
+|    100                 |         0           |
+|    500                 |         0           |
+|    1000                |         0           |
