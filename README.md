@@ -12,7 +12,16 @@ The hash function complies all the requirements that were specified in the given
 
 This is how hash function works: :snail:
 
-* Converting text into binary code
-* Padding the binary code, so that it will be divisible by 256
-* Using logic gates to mix all the binary code (makes hash code irrecoverable)
-* Converting binary to hexadecimal code
+* Converts text into binary code
+* Padds the binary code if it's size is less than 256
+* Uses logic gates (most of them are XOR) to mix all the binary code (makes hash code irrecoverable)
+* Converts binary to hexadecimal code
+
+Proof of avalanche effect: : :volcano:
+
+|   Input    |                         Output                                     |
+|------------|--------------------------------------------------------------------|
+|  lietuva   |  dbb2e6f7e020bebaaebe8203f7b3a6edb765cdefc0417d755086e2dc54a3a78f  | 
+|  Lietuva   |  c0df49d2ed8f9aa222acf8dba5c97d8181be93a5db1f354446fd2fca2f6eb3df  |
+|  Lietuva!  |  d523cbd8a626c29634a1b2328de9e2556a4797b14c4d852c33bede1b07b67d15  |
+
