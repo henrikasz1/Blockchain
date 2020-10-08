@@ -45,7 +45,7 @@ Large files (1001 symbols):
 |  long1.txt  |      1.999ms      | 06ee6dd453927e8d8fb48b3946a9d2735206567c4fda27aa58e82ad190435b8a |
 |  long2.txt  |      2.008ms      | cadcf12a2e866f6673f4e4a1a04f9c1baa8f2b78cf2ad46f2df591402840db9e |
 
-Large files (1001 symbols and only symbol is different):
+Large files (1001 symbols and only one symbol is different):
 
 |      File name         |   Time consumed   |                       Output                                     |
 |------------------------|-------------------|------------------------------------------------------------------|
