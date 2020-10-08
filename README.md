@@ -51,3 +51,9 @@ Large files (1001 symbols and only symbol is different):
 |------------------------|-------------------|------------------------------------------------------------------|
 |  longOneSymbDiff1.txt  |      2ms          | 582ef6beb9a38e4c647c0641981b61e3b9207fbea309c604b82f0c54579eba7e |
 |  longOneSymbDiff2.txt  |      1.997ms      | cc7fb3aae8e69a1d216857048c4a24f7e8656befe61d9741ac7e494006dbae2f |
+
+Konstitucija.txt file analysis:
+
+|      File name         |   Time consumed   |                       Output                                     |
+|------------------------|-------------------|------------------------------------------------------------------|
+|  Konstitucija.txt      |    110.936m       | 5ac9ee5b181ec70630269c9e7e1c1df865660c8ce72d557c941e4950abb9508a |
