@@ -2,7 +2,7 @@
 
 :hash: It is a simple program, which generates unique hash code of any size of text :hash:
 
-The hash function complies all the requirements that were specified in the given task:
+**The hash function complies all the requirements that were specified in the given task:**
 * Input can be of any size  :heavy_check_mark:
 * Output will always be in fixed length  :heavy_check_mark:
 * Hash function is deterministic (output of the same input is also the same)  :heavy_check_mark:
@@ -10,14 +10,14 @@ The hash function complies all the requirements that were specified in the given
 * It is impossible to recover text from a hash code  :heavy_check_mark:
 * Hash function is collision resistant  :heavy_check_mark:
 
-This is how hash function works: :snail:
+**This is how hash function works:** :snail:
 
 * Converts text into binary code
 * Padds the binary code if it's size is less than 256
 * Uses logic gates (most of them are XOR) to mix all the binary code (makes hash code irrecoverable)
 * Converts binary to hexadecimal code
 
-Proof of avalanche effect: : :volcano:
+**Proof of avalanche effect:** : :volcano:
 
 |   Input    |                         Output                                     |
 |------------|--------------------------------------------------------------------|
