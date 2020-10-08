@@ -18,6 +18,7 @@
 * Converts binary to hexadecimal code
 
 **Proof of avalanche effect:** : :volcano:
+(It seems that the output does not have fixed length, but trust me, all of them consist of 64 symbols, you can count if you want :) )
 
 |   Input    |                         Output                                     |
 |------------|--------------------------------------------------------------------|
