@@ -2,23 +2,28 @@
 
 int main(int argc, char *argv[]){
 
-  //time calculating sttuff
-  //random_device rd;
-  //mt19937 mt(rd());
-  //uniform_int_distribution<int> dist(1,10);
+  std::random_device rd;             //time calculating stuff
+  std::mt19937 mt(rd());
+  std::uniform_int_distribution<int> dist(1,10);
+
   system("cls");
   char choice; //pasirenka input'o tipa
   std::string input;
-  std::vector<int> bin;
+  //std::vector<int> bin;
 
-  std::cout << "Pasirinkite kaip iterpti teksta: \n Ivesti ranka - Spauskite 1 \n Nuskaityti is pasirinkto failo - Iveskite bet kokia kita reiksme\n";
+  std::cout << "Choose how you want to insert input: \n Insert by hand - press 1 \n Read from chosen file - press 2\n Test collision resistance - press 3\n Test percentage of difference - press any other key\n";
   std::cin >> choice;
   if (choice == '1')
   {
     std::cout << "Insert text \n";
     std::cin >> input;
+    auto start = std::chrono::steady_clock::now();
+    std::string output = combine_hash_function(input);
+    auto finish = std::chrono::steady_clock::now();
+    std::cout << output << std::endl;
+    std::cout << "Time consumed: " << std::chrono::duration <double, std::milli>(finish - start).count() << "ms" << std::endl;
   }
-  else
+  else if(choice == '2')
   {
     if (argc > 1)
     {
@@ -26,22 +31,25 @@ int main(int argc, char *argv[]){
       {
         readFile(argv[i], input);
       }
+      auto start = std::chrono::steady_clock::now();
+      std::string output = combine_hash_function(input);
+      auto finish = std::chrono::steady_clock::now();
+      std::cout << output << std::endl;
+      std::cout << "Time consumed: " << std::chrono::duration <double, std::milli>(finish - start).count() << "ms" << std::endl;
     }
     else
     {
       std::cout << "The name of the file has not been detected :( \n";
     }
   }
-  if (input == "")//forcing to give an output even though the text file is empty
+  else if(choice == '3')
   {
-      std::string efl = "This is an empty file";
-      to_bin(efl, bin);
+    test1(10);
+    test1(100);
+    test1(500);
+    test1(1000);
   }
-  else
-  {
-      to_bin(input, bin);
+  else{
+    test2();
   }
-  padding(bin);
-  std::string value = mixing_bin(bin);
-  std::cout << std::endl << to_hex(value) << std::endl;
 }
