@@ -70,6 +70,6 @@ Check for collisions (test1):
 Check difference (test2, length of line -> 5):
 
 * Collisions found -> 0
-* Minimum difference -> 100 %
-* Maximum difference -> 42.19 %
+* Minimum difference -> 42.19 %
+* Maximum difference -> 100 %
 * Average difference -> 92.07 %
