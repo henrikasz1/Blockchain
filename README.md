@@ -56,7 +56,7 @@ Konstitucija.txt file analysis:
 
 |      File name         |   Time consumed   |
 |------------------------|-------------------|
-|  Konstitucija.txt      |    110.936m       |
+|  Konstitucija.txt      |    576.796m       |
 
 Check for collisions (test1):
 
@@ -66,3 +66,10 @@ Check for collisions (test1):
 |    100                 |         0           |
 |    500                 |         0           |
 |    1000                |         0           |
+
+Check difference (test2, length of line -> 5):
+
+* Collisions found -> 0
+* Minimum difference -> 100 %
+* Maximum difference -> 42.19 %
+* Average difference -> 92.07 %
